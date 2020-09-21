@@ -17,13 +17,13 @@ export default function Hello({ data }) {
   //       setName(response.data.name);
   //     });
   // }, []);
-  return <div>name: {data.name}</div>;
+  return <div>Name: {data.name}</div>;
 }
 
 // This gets called on every request
 export async function getServerSideProps(context) {
   // Fetch data from external API
-  console.log(context);
+  console.log(process.env.hello);
   const res = await axios.get('https://jsonplaceholder.typicode.com/users/1');
   const data = res.data;
 
